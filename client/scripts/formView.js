@@ -10,7 +10,7 @@ var FormView = {
     // Stop the browser from submitting the form
     event.preventDefault();
     var value = $("input[type=text]").val();
-    Parse.create({message: value}, () => {
+    Parse.create({username: App.username, text: value}, () => {
       console.log('yay this works')
     })
 
