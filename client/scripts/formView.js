@@ -9,8 +9,12 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    
-    console.log('click!');
+    var value = $("input[type=text]").val();
+    Parse.create({message: value}, () => {
+      console.log('yay this works')
+    })
+
+    console.log(value);
   },
 
   setStatus: function(active) {
