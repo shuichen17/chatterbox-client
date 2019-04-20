@@ -14,7 +14,7 @@ var FormView = {
       console.log('yay this works')
     })
 
-    console.log(value);
+    //console.log(value);
   },
 
   setStatus: function(active) {

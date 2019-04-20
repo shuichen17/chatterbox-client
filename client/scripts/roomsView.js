@@ -5,6 +5,7 @@ var RoomsView = {
   obj: {},
 
   initialize: function() {
+    RoomsView.$button.on("click", RoomsView.roomClickHandler);
   },
 
   renderRoom: function(data) {
@@ -13,12 +14,16 @@ var RoomsView = {
       this.obj[rooms] = 1
       this.$select.append($('<option></option>').text(`${rooms}`));
     }
-    
-      
+  },
 
-    
-    //console.log(this.obj)
+  roomClickHandler: function(event) {
+    event.preventDefault();
+    var roomValue = $("input[id=addroom]").val();
+    console.log(roomValue)
 
+    Parse.create({roomname: roomValue}, () => {
+      console.log("works?");
+    })
 
 
   }
