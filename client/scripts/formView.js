@@ -12,8 +12,9 @@ var FormView = {
     var value = $("input[id=message]").val();
     Parse.create({username: App.username, text: value}, () => {
       console.log('yay this works')
+    location.reload(true);
     })
-
+    
     console.log(value);
   },
 

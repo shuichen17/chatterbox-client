@@ -5,7 +5,7 @@ var RoomsView = {
   obj: {},
 
   initialize: function() {
-    RoomsView.$button.on("click", RoomsView.roomClickHandler);
+    RoomsView.$button.on("click", Rooms.add);
   },
 
   renderRoom: function(data) {
@@ -16,16 +16,16 @@ var RoomsView = {
     }
   },
 
-  roomClickHandler: function(event) {
-    event.preventDefault();
-    var roomValue = $("input[id=addroom]").val();
-    console.log(roomValue)
+  // roomClickHandler: function(event) {
+  //   event.preventDefault();
+  //   var roomValue = $("input[id=addroom]").val();
+  //   console.log(roomValue)
 
-    Parse.create({roomname: roomValue}, () => {
-      console.log("works?");
-    })
+  //   Parse.create({roomname: roomValue}, () => {
+  //     console.log("works?");
+  //   })
 
 
-  }
+  // }
 
 };
