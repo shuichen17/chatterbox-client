@@ -20,10 +20,9 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      data.results.forEach(x => MessagesView.renderMessage(x),
-      )
+      data.results.forEach(x => MessagesView.renderMessage(x))
       data.results.forEach(y => RoomsView.renderRoom(y))
-        MessagesView.filterMessageByRoom(data.results)      
+      data.results.forEach(z => MessagesView.filterMessageByRoom(z))    
       callback();
     });
   },
